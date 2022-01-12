@@ -22,12 +22,12 @@ const config: HardhatUserConfig = {
       },
     },
     goerli: {
-      url: process.env.ETH_RPC,
-      accounts: process.env.PRIVATE_KEY
-        ? [process.env.PRIVATE_KEY]
-        : {
-            mnemonic: "test test test test test test test test test test test junk",
-          },
+      url: process.env.ETH_RPC_GOERLI,
+      accounts: [process.env.PRIVATE_KEY as string],
+    },
+    kovan: {
+      url: process.env.ETH_RPC_KOVAN,
+      accounts: [process.env.PRIVATE_KEY as string],
     },
   },
   mocha: {
